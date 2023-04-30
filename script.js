@@ -15,6 +15,33 @@ body.insertAdjacentHTML('afterbegin', '<main class="main"><div class="wrapper"><
 const textarea = document.querySelector('textarea');
 const keyboard = document.querySelector('.keyboard');
 
+function languageСhange() {
+  document.addEventListener('keydown', (event) => {
+    if (event.shiftKey && event.altKey) {
+      if (lang === 'rus') {
+        lang = 'eng';
+      } else {
+        lang = 'rus';
+      }
+    }
+  });
+}
+
+function capsСhange() {
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'CapsLock') {
+      if (caps === false) {
+        caps = true;
+      } else {
+        caps = false;
+      }
+    }
+  });
+}
+
+capsСhange();
+languageСhange();
+
 Object.keys(ButtonsRus).forEach((key) => {
   const div = document.createElement('div');
   div.innerHTML = ButtonsRus[key];
@@ -37,20 +64,6 @@ Object.keys(ButtonsRus).forEach((key) => {
 
 document.addEventListener('keydown', (event) => {
   event.preventDefault();
-  if (event.shiftKey && event.altKey) {
-    if (lang === 'rus') {
-      lang = 'eng';
-    } else {
-      lang = 'rus';
-    }
-  }
-  if (event.code === 'CapsLock') {
-    if (caps === false) {
-      caps = true;
-    } else {
-      caps = false;
-    }
-  }
   if (lang === 'rus') {
     if (caps === false) {
       Object.keys(ButtonsRus).forEach((key) => {
@@ -113,4 +126,11 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('click', () => {
   textareaPosition = textarea.selectionStart;
   console.log(textareaPosition);
+});
+
+keyboard.addEventListener('mousedown', (event) => {
+  if (event.target.classList.contains('keyboard__key')) {
+    console.log(event.code);
+    textarea.value += event.target.textContent;
+  }
 });
