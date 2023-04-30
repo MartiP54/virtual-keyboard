@@ -75,7 +75,7 @@ function capsСhange() {
       });
     }
   });
-  keyboard.addEventListener('mousedown', (event) => {
+  keyboard.addEventListener('mouseup', (event) => {
     if (event.target.classList.contains('keyboard__key')) {
       if (event.target.textContent === 'CAPSLOCK') {
         if (caps === false) {
@@ -83,12 +83,12 @@ function capsСhange() {
         } else {
           caps = false;
         }
+        keyboard.innerHTML = '';
+        Object.keys(ButtonsRus).forEach((key) => {
+          initKeyBoard(key);
+        });
       }
     }
-    keyboard.innerHTML = '';
-    Object.keys(ButtonsRus).forEach((key) => {
-      initKeyBoard(key);
-    });
   });
 }
 
@@ -99,7 +99,6 @@ function backspaceFunc() {
   let txtemp = textarea.value;
   txtemp = txtemp.slice(0, textareaPosition - 1) + txtemp.slice(textareaPosition, txtemp.length);
   textarea.value = txtemp;
-  console.log(textareaPosition);
   textareaPosition -= 1;
 }
 
@@ -126,7 +125,7 @@ document.addEventListener('keydown', (event) => {
           if (event.code === 'Enter') {
             enterFunc();
           }
-          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter')) {
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab')) {
             textarea.value += ButtonsRus[`${key}`];
           }
         }
@@ -141,7 +140,7 @@ document.addEventListener('keydown', (event) => {
           if (event.code === 'Enter') {
             enterFunc();
           }
-          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter')) {
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab')) {
             textarea.value += ButtonsRus[`${key}`].toUpperCase();
           }
         }
@@ -158,7 +157,7 @@ document.addEventListener('keydown', (event) => {
           if (event.code === 'Enter') {
             enterFunc();
           }
-          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter')) {
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab')) {
             textarea.value += ButtonsEng[`${key}`];
           }
         }
@@ -173,7 +172,7 @@ document.addEventListener('keydown', (event) => {
           if (event.code === 'Enter') {
             enterFunc();
           }
-          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter')) {
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab')) {
             textarea.value += ButtonsEng[`${key}`].toUpperCase();
           }
         }
@@ -188,7 +187,6 @@ document.addEventListener('click', () => {
 
 keyboard.addEventListener('mousedown', (event) => {
   if (event.target.classList.contains('keyboard__key')) {
-    console.log(event.target);
     if (!(event.target.textContent === 'SHIFT' || event.target.textContent === 'ALT' || event.target.textContent === 'CTRL' || event.target.textContent === 'TAB' || event.target.textContent === 'CAPSLOCK' || event.target.textContent === 'BACKSPACE' || event.target.textContent === 'WIN' || event.target.textContent === 'ENTER')) {
       textarea.value += event.target.textContent;
       textareaPosition = textarea.selectionStart;
@@ -200,4 +198,23 @@ keyboard.addEventListener('mousedown', (event) => {
       enterFunc();
     }
   }
+});
+
+document.addEventListener('keydown', (event) => {
+  document.querySelector(`.${event.code}`).classList.add('active');
+});
+
+document.addEventListener('keyup', (event) => {
+  document.querySelector(`.${event.code}`).classList.remove('active');
+});
+
+keyboard.addEventListener('mousedown', (event) => {
+  if (!(event.target.classList.value === 'keyboard')) {
+    event.target.classList.remove('hover');
+    event.target.classList.add('active');
+  }
+});
+
+keyboard.addEventListener('mouseup', (event) => {
+  event.target.classList.remove('active');
 });
