@@ -32,7 +32,7 @@ font-size: 30px;
 .keyboard__key {
   display: flex;
   grid-column: span 4;
-  background-color:blueviolet;
+  background:#6f2DA8 ;
   width: auto;
   position: relative;
   height: 40px;
@@ -65,4 +65,9 @@ font-size: 30px;
 
 .keyboard__key_space {
   grid-column: span 20;
+}
+
+.AltLeft,
+.AltRight {
+  font-size: 15px;
 }
