@@ -22,7 +22,6 @@ let lang = langStorage.getItem('language');
 if (langStorage.getItem('language') == null) {
   lang = 'rus';
 }
-console.log(langStorage);
 let caps = false;
 let textareaPosition;
 
@@ -194,17 +193,33 @@ function capsСhange() {
 }
 
 function backspaceFunc() {
-  if (textareaPosition <= 0) {
-    textareaPosition = textarea.selectionStart;
+  if (!(textareaPosition <= 0)) {
+    let txtemp = textarea.value;
+    txtemp = txtemp.slice(0, textareaPosition - 1) + txtemp.slice(textareaPosition, txtemp.length);
+    textarea.value = txtemp;
+    textareaPosition -= 1;
+    textarea.selectionStart = textareaPosition;
+    textarea.selectionEnd = textareaPosition;
   }
-  let txtemp = textarea.value;
-  txtemp = txtemp.slice(0, textareaPosition - 1) + txtemp.slice(textareaPosition, txtemp.length);
-  textarea.value = txtemp;
-  textareaPosition -= 1;
+}
+
+function deleteFunc() {
+  if (!(textareaPosition === textarea.value.length)) {
+    let txtemp = textarea.value;
+    txtemp = txtemp.slice(0, textareaPosition) + txtemp.slice(textareaPosition + 1, txtemp.length);
+    textarea.value = txtemp;
+    textarea.selectionStart = textareaPosition;
+    textarea.selectionEnd = textareaPosition;
+  }
 }
 
 function enterFunc() {
+  let txtemp = textarea.value;
+  txtemp = `${txtemp.slice(0, textareaPosition)}\n${txtemp.slice(textareaPosition, txtemp.length - 1)}`;
+  textarea.value = txtemp;
   textarea.value += '\n';
+  textarea.selectionStart = textareaPosition + 1;
+  textarea.selectionEnd = textareaPosition + 1;
 }
 
 function shiftFunc() {
@@ -344,13 +359,20 @@ languageСhange();
 
 document.addEventListener('keydown', (event) => {
   event.preventDefault();
+  textareaPosition = textarea.selectionStart;
   if (lang === 'rus') {
     Object.keys(ButtonsRus).forEach((key) => {
       if (event.code === key) {
         if (event.code === 'Backspace') {
+          textarea.focus();
           backspaceFunc();
         }
+        if (event.code === 'Delete') {
+          textarea.focus();
+          deleteFunc();
+        }
         if (event.code === 'Enter') {
+          textarea.focus();
           enterFunc();
         }
         if (event.code === 'CapsLock') {
@@ -366,9 +388,15 @@ document.addEventListener('keydown', (event) => {
     Object.keys(ButtonsEng).forEach((key) => {
       if (event.code === key) {
         if (event.code === 'Backspace') {
+          textarea.focus();
           backspaceFunc();
         }
+        if (event.code === 'Delete') {
+          textarea.focus();
+          deleteFunc();
+        }
         if (event.code === 'Enter') {
+          textarea.focus();
           enterFunc();
         }
         if (event.code === 'CapsLock') {
@@ -396,10 +424,16 @@ buttons.forEach((b) => b.addEventListener('mouseup', (event) => {
             textareaPosition = textarea.selectionStart;
           }
           if (a.textContent === 'ENTER') {
+            textarea.focus();
             enterFunc();
           }
           if (a.textContent === 'BACKSPACE') {
+            textarea.focus();
             backspaceFunc();
+          }
+          if (a.textContent === 'DEL') {
+            textarea.focus();
+            deleteFunc();
           }
         }
       });
