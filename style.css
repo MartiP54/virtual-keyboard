@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items:center;
-  gap: 80px;
+  gap: 40px;
 }
 
 
@@ -27,6 +27,10 @@ font-size: 30px;
   display: grid;
   grid-template-columns: repeat(60,10px);
   grid-gap: 3px;
+  padding: 15px;
+  border:3px solid #311432;
+  border-radius: 10px;
+  background:#d7bfdc
 }
 
 .keyboard__key {
@@ -52,28 +56,43 @@ font-size: 30px;
 
 .keyboard__key_2din {
   grid-column: span 8;
-  font-size: 15px;
 }
 
 .keyboard__key_1_5din {
   grid-column: span 6;
-  font-size: 15px;
 }
 
 .keyboard__key_2_5din {
   grid-column: span 10;
-  font-size: 15px;
 }
 
 .keyboard__key_space {
   grid-column: span 20;
 }
 
-.AltLeft,
-.AltRight {
+.spec {
   font-size: 15px;
+  background: #b5338a;
 }
 
+
+.active {
+  background: #b43757;
+}
 .active:hover {
   background: #b43757;
+}
+
+.hide {
+  display: none;
+}
+
+
+.annatation{
+  margin-left: -100px;
+  color: #311432
+}
+
+.h1 {
+  color: #311432
 }
