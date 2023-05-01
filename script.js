@@ -4,7 +4,19 @@ const ButtonsRus = {
 const ButtonsEng = {
   Backquote: '`', Digit1: '1', Digit2: '2', Digit3: '3', Digit4: '4', Digit5: '5', Digit6: '6', Digit7: '7', Digit8: '8', Digit9: '9', Digit0: '0', Minus: '-', Equal: '=', Backspace: 'BACKSPACE', Tab: 'TAB', KeyQ: 'q', KeyW: 'w', KeyE: 'e', KeyR: 'r', KeyT: 't', KeyY: 'y', KeyU: 'u', KeyI: 'i', KeyO: 'o', KeyP: 'p', BracketLeft: '[', BracketRight: ']', Backslash: '\\', Delete: 'DEL', CapsLock: 'CAPSLOCK', KeyA: 'a', KeyS: 's', KeyD: 'd', KeyF: 'f', KeyG: 'g', KeyH: 'h', KeyJ: 'j', KeyK: 'k', KeyL: 'l', Semicolon: ';', Quote: "'", Enter: 'ENTER', ShiftLeft: 'SHIFT', KeyZ: 'z', KeyX: 'x', KeyC: 'c', KeyV: 'v', KeyB: 'b', KeyN: 'n', KeyM: 'm', Comma: ',', Period: '.', Slash: '/', ArrowUp: '▲', ShiftRight: 'SHIFT', ControlLeft: 'CTRL', MetaLeft: 'WIN', AltLeft: 'ALT', Space: ' ', AltRight: 'ALT', ControlRight: 'CTRL', ArrowLeft: '◄', ArrowDown: '▼', ArrowRight: '►',
 };
+const ButtonsShiftRus = {
+  Backquote: 'Ё', Digit1: '!', Digit2: '"', Digit3: '№', Digit4: ';', Digit5: '%', Digit6: ':', Digit7: '?', Digit8: '*', Digit9: '(', Digit0: ')', Minus: '_', Equal: '+', Backspace: 'BACKSPACE', Tab: 'TAB', KeyQ: 'Й', KeyW: 'Ц', KeyE: 'У', KeyR: 'К', KeyT: 'Е', KeyY: 'Н', KeyU: 'Г', KeyI: 'Ш', KeyO: 'Щ', KeyP: 'З', BracketLeft: 'Х', BracketRight: 'Ъ', Backslash: '/', Delete: 'DEL', CapsLock: 'CAPSLOCK', KeyA: 'Ф', KeyS: 'Ы', KeyD: 'В', KeyF: 'А', KeyG: 'П', KeyH: 'Р', KeyJ: 'О', KeyK: 'Л', KeyL: 'Д', Semicolon: 'Ж', Quote: 'Э', Enter: 'ENTER', ShiftLeft: 'SHIFT', KeyZ: 'Я', KeyX: 'Ч', KeyC: 'С', KeyV: 'М', KeyB: 'И', KeyN: 'Т', KeyM: 'Ь', Comma: 'Б', Period: 'Ю', Slash: ',', ArrowUp: '▲', ShiftRight: 'SHIFT', ControlLeft: 'CTRL', MetaLeft: 'WIN', AltLeft: 'ALT', Space: ' ', AltRight: 'ALT', ControlRight: 'CTRL', ArrowLeft: '◄', ArrowDown: '▼', ArrowRight: '►',
+};
+const ButtonsShiftCapsRus = {
+  Backquote: 'Ё', Digit1: '!', Digit2: '"', Digit3: '№', Digit4: ';', Digit5: '%', Digit6: ':', Digit7: '?', Digit8: '*', Digit9: '(', Digit0: ')', Minus: '_', Equal: '+', Backspace: 'BACKSPACE', Tab: 'TAB', KeyQ: 'й', KeyW: 'ц', KeyE: 'у', KeyR: 'к', KeyT: 'е', KeyY: 'н', KeyU: 'г', KeyI: 'ш', KeyO: 'щ', KeyP: 'з', BracketLeft: 'х', BracketRight: 'ъ', Backslash: '/', Delete: 'DEL', CapsLock: 'CAPSLOCK', KeyA: 'ф', KeyS: 'ы', KeyD: 'в', KeyF: 'а', KeyG: 'п', KeyH: 'р', KeyJ: 'о', KeyK: 'л', KeyL: 'д', Semicolon: 'ж', Quote: 'э', Enter: 'ENTER', ShiftLeft: 'SHIFT', KeyZ: 'я', KeyX: 'ч', KeyC: 'с', KeyV: 'м', KeyB: 'и', KeyN: 'т', KeyM: 'ь', Comma: 'б', Period: 'ю', Slash: ',', ArrowUp: '▲', ShiftRight: 'SHIFT', ControlLeft: 'CTRL', MetaLeft: 'WIN', AltLeft: 'ALT', Space: ' ', AltRight: 'ALT', ControlRight: 'CTRL', ArrowLeft: '◄', ArrowDown: '▼', ArrowRight: '►',
+};
+const ButtonsShiftEng = {
+  Backquote: '~', Digit1: '!', Digit2: '@', Digit3: '#', Digit4: '$', Digit5: '%', Digit6: '^', Digit7: '&', Digit8: '*', Digit9: '(', Digit0: ')', Minus: '_', Equal: '+', Backspace: 'BACKSPACE', Tab: 'TAB', KeyQ: 'Q', KeyW: 'W', KeyE: 'E', KeyR: 'R', KeyT: 'T', KeyY: 'Y', KeyU: 'U', KeyI: 'I', KeyO: 'O', KeyP: 'P', BracketLeft: '{', BracketRight: '}', Backslash: '|', Delete: 'DEL', CapsLock: 'CAPSLOCK', KeyA: 'A', KeyS: 'S', KeyD: 'D', KeyF: 'F', KeyG: 'G', KeyH: 'H', KeyJ: 'J', KeyK: 'K', KeyL: 'L', Semicolon: ':', Quote: '"', Enter: 'ENTER', ShiftLeft: 'SHIFT', KeyZ: 'Z', KeyX: 'X', KeyC: 'C', KeyV: 'V', KeyB: 'B', KeyN: 'N', KeyM: 'M', Comma: '<', Period: '>', Slash: '?', ArrowUp: '▲', ShiftRight: 'SHIFT', ControlLeft: 'CTRL', MetaLeft: 'WIN', AltLeft: 'ALT', Space: ' ', AltRight: 'ALT', ControlRight: 'CTRL', ArrowLeft: '◄', ArrowDown: '▼', ArrowRight: '►',
+};
 
+const ButtonsShiftCapsEng = {
+  Backquote: '~', Digit1: '!', Digit2: '@', Digit3: '#', Digit4: '$', Digit5: '%', Digit6: '^', Digit7: '&', Digit8: '*', Digit9: '(', Digit0: ')', Minus: '_', Equal: '+', Backspace: 'BACKSPACE', Tab: 'TAB', KeyQ: 'q', KeyW: 'w', KeyE: 'e', KeyR: 'r', KeyT: 't', KeyY: 'y', KeyU: 'u', KeyI: 'i', KeyO: 'o', KeyP: 'p', BracketLeft: '[', BracketRight: ']', Backslash: '|', Delete: 'DEL', CapsLock: 'CAPSLOCK', KeyA: 'a', KeyS: 's', KeyD: 'd', KeyF: 'f', KeyG: 'g', KeyH: 'h', KeyJ: 'j', KeyK: 'k', KeyL: 'l', Semicolon: ':', Quote: '"', Enter: 'ENTER', ShiftLeft: 'SHIFT', KeyZ: 'z', KeyX: 'x', KeyC: 'c', KeyV: 'v', KeyB: 'b', KeyN: 'n', KeyM: 'm', Comma: '<', Period: '>', Slash: '?', ArrowUp: '▲', ShiftRight: 'SHIFT', ControlLeft: 'CTRL', MetaLeft: 'WIN', AltLeft: 'ALT', Space: ' ', AltRight: 'ALT', ControlRight: 'CTRL', ArrowLeft: '◄', ArrowDown: '▼', ArrowRight: '►',
+};
 const langStorage = window.sessionStorage;
 let lang = langStorage.getItem('language');
 if (langStorage.getItem('language') == null) {
@@ -15,7 +27,7 @@ let caps = false;
 let textareaPosition;
 
 const body = document.querySelector('body');
-body.insertAdjacentHTML('afterbegin', '<main class="main"><div class="wrapper"><h1 class="h1">Virtual Keyboard</h1><textarea class="textarea"></textarea><div class="annatation"><h2>Клавиатура создана в операционной системе Windows</h2> <h2>Для переключения языка используйте комбинацию: shift + alt</h2></div><div class="keyboard"></h2></div></div></main>');
+body.insertAdjacentHTML('afterbegin', '<main class="main"><div class="wrapper"><h1 class="h1">Virtual Keyboard</h1><textarea class="textarea"></textarea><div class="annatation"><h2>Клавиатура создана в операционной системе Windows</h2> <h2>Для переключения языка используйте комбинацию: ctrl + alt</h2></div><div class="keyboard"></h2></div></div></main>');
 
 const textarea = document.querySelector('textarea');
 const keyboard = document.querySelector('.keyboard');
@@ -48,7 +60,7 @@ function initKeyBoard(key) {
   SpanRus.append(SpanRusShift);
   SpanRusShift.classList.add('shift');
   SpanRusShift.classList.add('hide');
-  SpanRusShift.innerHTML = ButtonsRus[key].toUpperCase();
+  SpanRusShift.innerHTML = ButtonsShiftRus[key];
 
   SpanRus.append(SpanRusCaps);
   SpanRusCaps.classList.add('caps');
@@ -58,7 +70,7 @@ function initKeyBoard(key) {
   SpanRus.append(SpanRusShiftCaps);
   SpanRusShiftCaps.classList.add('shiftCaps');
   SpanRusShiftCaps.classList.add('hide');
-  SpanRusShiftCaps.innerHTML = ButtonsRus[key].toUpperCase();
+  SpanRusShiftCaps.innerHTML = ButtonsShiftCapsRus[key];
 
   SpanEng.append(SpanEngDefault);
   SpanEngDefault.classList.add('def');
@@ -67,7 +79,7 @@ function initKeyBoard(key) {
   SpanEng.append(SpanEngShift);
   SpanEngShift.classList.add('shift');
   SpanEngShift.classList.add('hide');
-  SpanEngShift.innerHTML = ButtonsEng[key].toUpperCase();
+  SpanEngShift.innerHTML = ButtonsShiftEng[key];
 
   SpanEng.append(SpanEngCaps);
   SpanEngCaps.classList.add('caps');
@@ -77,7 +89,7 @@ function initKeyBoard(key) {
   SpanEng.append(SpanEngShiftCaps);
   SpanEngShiftCaps.classList.add('shiftCaps');
   SpanEngShiftCaps.classList.add('hide');
-  SpanEngShiftCaps.innerHTML = ButtonsEng[key].toUpperCase();
+  SpanEngShiftCaps.innerHTML = ButtonsShiftCapsEng[key];
 
   div.classList.add('keyboard__key');
   if (key === 'Backspace' || key === 'CapsLock' || key === 'Enter') {
@@ -116,7 +128,7 @@ const SpanEng = document.querySelectorAll('.eng');
 
 function languageСhange() {
   document.addEventListener('keydown', (event) => {
-    if (event.shiftKey && event.altKey) {
+    if (event.ctrlKey && event.altKey) {
       if (lang === 'rus') {
         lang = 'eng';
         SpanRus.forEach((e) => {
@@ -195,6 +207,139 @@ function enterFunc() {
   textarea.value += '\n';
 }
 
+function shiftFunc() {
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'ShiftLeft') {
+      if (caps === true) {
+        SpanRusCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanRusShiftCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngShiftCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+      } else {
+        SpanRusDefault.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanRusShift.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngDefault.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngShift.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+      }
+    }
+  });
+
+  document.addEventListener('keyup', (event) => {
+    if (event.code === 'ShiftLeft') {
+      if (caps === true) {
+        SpanRusCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanRusShiftCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngShiftCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+      } else {
+        SpanRusDefault.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanRusShift.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngDefault.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngShift.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+      }
+    }
+  });
+}
+
+function shiftFuncMouse() {
+  buttons.forEach((b) => b.addEventListener('mousedown', (e) => {
+    if (e.currentTarget.classList.contains('ShiftLeft')) {
+      if (caps === true) {
+        SpanRusCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanRusShiftCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngShiftCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+      } else {
+        SpanRusDefault.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanRusShift.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngDefault.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngShift.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+      }
+    }
+  }));
+
+  buttons.forEach((b) => b.addEventListener('mouseup', (e) => {
+    if (e.currentTarget.classList.contains('ShiftLeft')) {
+      if (caps === true) {
+        SpanRusCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanRusShiftCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngCaps.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngShiftCaps.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+      } else {
+        SpanRusDefault.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanRusShift.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+        SpanEngDefault.forEach((ev) => {
+          ev.classList.remove('hide');
+        });
+        SpanEngShift.forEach((ev) => {
+          ev.classList.add('hide');
+        });
+      }
+    }
+  }));
+}
+shiftFunc();
+shiftFuncMouse();
 languageСhange();
 
 document.addEventListener('keydown', (event) => {
@@ -211,8 +356,7 @@ document.addEventListener('keydown', (event) => {
         if (event.code === 'CapsLock') {
           capsСhange();
         }
-        console.log(event);
-        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab')) {
+        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete')) {
           textarea.value += ButtonsRus[`${key}`];
         }
       }
@@ -230,7 +374,7 @@ document.addEventListener('keydown', (event) => {
         if (event.code === 'CapsLock') {
           capsСhange();
         }
-        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab')) {
+        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete')) {
           textarea.value += ButtonsEng[`${key}`];
         }
       }
@@ -247,7 +391,7 @@ buttons.forEach((b) => b.addEventListener('mouseup', (event) => {
     if (!(e.classList.contains('hide'))) {
       e.childNodes.forEach((a) => {
         if (!(a.classList.contains('hide')) && (!(a.classList.contains('rus')) && (!(a.classList.contains('eng'))))) {
-          if (!(a.textContent === 'SHIFT' || a.textContent === 'ALT' || a.textContent === 'CTRL' || a.textContent === 'TAB' || a.textContent === 'CAPSLOCK' || a.textContent === 'BACKSPACE' || a.textContent === 'WIN' || a.textContent === 'ENTER')) {
+          if (!(a.textContent === 'SHIFT' || a.textContent === 'ALT' || a.textContent === 'CTRL' || a.textContent === 'TAB' || a.textContent === 'CAPSLOCK' || a.textContent === 'BACKSPACE' || a.textContent === 'WIN' || a.textContent === 'ENTER' || a.textContent === 'DEL')) {
             textarea.value += a.textContent;
             textareaPosition = textarea.selectionStart;
           }

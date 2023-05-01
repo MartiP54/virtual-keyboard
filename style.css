@@ -48,10 +48,12 @@ font-size: 30px;
   justify-content: center;
   border-radius: 5px;
   cursor: pointer;
+  transition: border-radius 0.4s , background 0.4frs;
 }
 
 .keyboard__key:hover {
   background:#702963;
+  background 0.5s;
 }
 
 .keyboard__key_2din {
@@ -78,9 +80,13 @@ font-size: 30px;
 
 .active {
   background: #b43757;
+  border-radius: 20px;
+  transition: border-radius 0.5s, background 0.5s;
+
 }
 .active:hover {
   background: #b43757;
+  
 }
 
 .hide {
