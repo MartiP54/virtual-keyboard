@@ -227,6 +227,14 @@ function tabFunc() {
   textarea.value = txtemp;
 }
 
+function spaceFunc() {
+  let txtemp = textarea.value;
+  txtemp = `${txtemp.slice(0, textareaPosition)} ${txtemp.slice(textareaPosition, txtemp.length)}`;
+  textarea.value = txtemp;
+  textarea.selectionStart = textareaPosition + 1;
+  textarea.selectionEnd = textareaPosition + 1;
+}
+
 function shiftFunc() {
   document.addEventListener('keydown', (event) => {
     if (event.code === 'ShiftLeft') {
@@ -384,10 +392,14 @@ document.addEventListener('keydown', (event) => {
           textarea.focus();
           tabFunc();
         }
+        if (event.code === 'Space') {
+          textarea.focus();
+          spaceFunc();
+        }
         if (event.code === 'CapsLock') {
           capsСhange();
         }
-        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete')) {
+        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
           textarea.value += ButtonsRus[`${key}`];
         }
       }
@@ -412,10 +424,14 @@ document.addEventListener('keydown', (event) => {
           textarea.focus();
           tabFunc();
         }
+        if (event.code === 'Space') {
+          textarea.focus();
+          spaceFunc();
+        }
         if (event.code === 'CapsLock') {
           capsСhange();
         }
-        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete')) {
+        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
           textarea.value += ButtonsEng[`${key}`];
         }
       }
@@ -432,7 +448,7 @@ buttons.forEach((b) => b.addEventListener('mouseup', (event) => {
     if (!(e.classList.contains('hide'))) {
       e.childNodes.forEach((a) => {
         if (!(a.classList.contains('hide')) && (!(a.classList.contains('rus')) && (!(a.classList.contains('eng'))))) {
-          if (!(a.textContent === 'SHIFT' || a.textContent === 'ALT' || a.textContent === 'CTRL' || a.textContent === 'TAB' || a.textContent === 'CAPSLOCK' || a.textContent === 'BACKSPACE' || a.textContent === 'WIN' || a.textContent === 'ENTER' || a.textContent === 'DEL')) {
+          if (!(a.textContent === 'SHIFT' || a.textContent === 'ALT' || a.textContent === 'CTRL' || a.textContent === 'TAB' || a.textContent === 'CAPSLOCK' || a.textContent === 'BACKSPACE' || a.textContent === 'WIN' || a.textContent === 'ENTER' || a.textContent === 'DEL' || a.textContent === ' ')) {
             textarea.value += a.textContent;
             textareaPosition = textarea.selectionStart;
           }
@@ -443,6 +459,10 @@ buttons.forEach((b) => b.addEventListener('mouseup', (event) => {
           if (a.textContent === 'TAB') {
             textarea.focus();
             tabFunc();
+          }
+          if (a.textContent === ' ') {
+            textarea.focus();
+            spaceFunc();
           }
           if (a.textContent === 'BACKSPACE') {
             textarea.focus();
