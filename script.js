@@ -217,9 +217,14 @@ function enterFunc() {
   let txtemp = textarea.value;
   txtemp = `${txtemp.slice(0, textareaPosition)}\n${txtemp.slice(textareaPosition, txtemp.length - 1)}`;
   textarea.value = txtemp;
-  textarea.value += '\n';
   textarea.selectionStart = textareaPosition + 1;
   textarea.selectionEnd = textareaPosition + 1;
+}
+
+function tabFunc() {
+  let txtemp = textarea.value;
+  txtemp = `${txtemp.slice(0, textareaPosition)}    ${txtemp.slice(textareaPosition, txtemp.length - 1)}`;
+  textarea.value = txtemp;
 }
 
 function shiftFunc() {
@@ -375,6 +380,10 @@ document.addEventListener('keydown', (event) => {
           textarea.focus();
           enterFunc();
         }
+        if (event.code === 'Tab') {
+          textarea.focus();
+          tabFunc();
+        }
         if (event.code === 'CapsLock') {
           capsСhange();
         }
@@ -398,6 +407,10 @@ document.addEventListener('keydown', (event) => {
         if (event.code === 'Enter') {
           textarea.focus();
           enterFunc();
+        }
+        if (event.code === 'Tab') {
+          textarea.focus();
+          tabFunc();
         }
         if (event.code === 'CapsLock') {
           capsСhange();
@@ -426,6 +439,10 @@ buttons.forEach((b) => b.addEventListener('mouseup', (event) => {
           if (a.textContent === 'ENTER') {
             textarea.focus();
             enterFunc();
+          }
+          if (a.textContent === 'TAB') {
+            textarea.focus();
+            tabFunc();
           }
           if (a.textContent === 'BACKSPACE') {
             textarea.focus();
