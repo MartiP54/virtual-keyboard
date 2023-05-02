@@ -551,9 +551,7 @@ document.addEventListener('keydown', (event) => {
   document.querySelector(`.${event.code}`).classList.add('active');
 });
 
-document.addEventListener('keydown', (event) => {
-  console.log(document.querySelector(`.${event.code}`));
-});
+
 document.addEventListener('keyup', (event) => {
   document.querySelector(`.${event.code}`).classList.remove('active');
 });
