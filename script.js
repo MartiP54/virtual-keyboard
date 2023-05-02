@@ -237,7 +237,7 @@ function spaceFunc() {
 
 function shiftFunc() {
   document.addEventListener('keydown', (event) => {
-    if (event.code === 'ShiftLeft') {
+    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
       if (caps === true) {
         SpanRusCaps.forEach((ev) => {
           ev.classList.add('hide');
@@ -269,7 +269,7 @@ function shiftFunc() {
   });
 
   document.addEventListener('keyup', (event) => {
-    if (event.code === 'ShiftLeft') {
+    if (event.code === 'ShiftLeft' || event.code === 'ShiftRight') {
       if (caps === true) {
         SpanRusCaps.forEach((ev) => {
           ev.classList.remove('hide');
@@ -303,7 +303,7 @@ function shiftFunc() {
 
 function shiftFuncMouse() {
   buttons.forEach((b) => b.addEventListener('mousedown', (e) => {
-    if (e.currentTarget.classList.contains('ShiftLeft')) {
+    if (e.currentTarget.classList.contains('ShiftLeft') || e.currentTarget.classList.contains('ShiftRight')) {
       if (caps === true) {
         SpanRusCaps.forEach((ev) => {
           ev.classList.add('hide');
@@ -335,7 +335,7 @@ function shiftFuncMouse() {
   }));
 
   buttons.forEach((b) => b.addEventListener('mouseup', (e) => {
-    if (e.currentTarget.classList.contains('ShiftLeft')) {
+    if (e.currentTarget.classList.contains('ShiftLeft') || e.currentTarget.classList.contains('ShiftRight')) {
       if (caps === true) {
         SpanRusCaps.forEach((ev) => {
           ev.classList.remove('hide');
@@ -374,68 +374,134 @@ document.addEventListener('keydown', (event) => {
   event.preventDefault();
   textareaPosition = textarea.selectionStart;
   if (lang === 'rus') {
-    Object.keys(ButtonsRus).forEach((key) => {
-      if (event.code === key) {
-        if (event.code === 'Backspace') {
-          textarea.focus();
-          backspaceFunc();
+    if (caps === false) {
+      Object.keys(ButtonsRus).forEach((key) => {
+        if (event.code === key) {
+          if (event.code === 'Backspace') {
+            textarea.focus();
+            backspaceFunc();
+          }
+          if (event.code === 'Delete') {
+            textarea.focus();
+            deleteFunc();
+          }
+          if (event.code === 'Enter') {
+            textarea.focus();
+            enterFunc();
+          }
+          if (event.code === 'Tab') {
+            textarea.focus();
+            tabFunc();
+          }
+          if (event.code === 'Space') {
+            textarea.focus();
+            spaceFunc();
+          }
+          if (event.code === 'CapsLock') {
+            capsСhange();
+          }
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
+            textarea.value += ButtonsRus[`${key}`];
+          }
         }
-        if (event.code === 'Delete') {
-          textarea.focus();
-          deleteFunc();
+      });
+    } else {
+      Object.keys(ButtonsRus).forEach((key) => {
+        if (event.code === key) {
+          if (event.code === 'Backspace') {
+            textarea.focus();
+            backspaceFunc();
+          }
+          if (event.code === 'Delete') {
+            textarea.focus();
+            deleteFunc();
+          }
+          if (event.code === 'Enter') {
+            textarea.focus();
+            enterFunc();
+          }
+          if (event.code === 'Tab') {
+            textarea.focus();
+            tabFunc();
+          }
+          if (event.code === 'Space') {
+            textarea.focus();
+            spaceFunc();
+          }
+          if (event.code === 'CapsLock') {
+            capsСhange();
+          }
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
+            textarea.value += ButtonsRus[`${key}`].toUpperCase();
+          }
         }
-        if (event.code === 'Enter') {
-          textarea.focus();
-          enterFunc();
-        }
-        if (event.code === 'Tab') {
-          textarea.focus();
-          tabFunc();
-        }
-        if (event.code === 'Space') {
-          textarea.focus();
-          spaceFunc();
-        }
-        if (event.code === 'CapsLock') {
-          capsСhange();
-        }
-        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
-          textarea.value += ButtonsRus[`${key}`];
-        }
-      }
-    });
+      });
+    }
   }
   if (lang === 'eng') {
-    Object.keys(ButtonsEng).forEach((key) => {
-      if (event.code === key) {
-        if (event.code === 'Backspace') {
-          textarea.focus();
-          backspaceFunc();
+    if (caps === false) {
+      Object.keys(ButtonsEng).forEach((key) => {
+        if (event.code === key) {
+          if (event.code === 'Backspace') {
+            textarea.focus();
+            backspaceFunc();
+          }
+          if (event.code === 'Delete') {
+            textarea.focus();
+            deleteFunc();
+          }
+          if (event.code === 'Enter') {
+            textarea.focus();
+            enterFunc();
+          }
+          if (event.code === 'Tab') {
+            textarea.focus();
+            tabFunc();
+          }
+          if (event.code === 'Space') {
+            textarea.focus();
+            spaceFunc();
+          }
+          if (event.code === 'CapsLock') {
+            capsСhange();
+          }
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
+            textarea.value += ButtonsEng[`${key}`];
+          }
         }
-        if (event.code === 'Delete') {
-          textarea.focus();
-          deleteFunc();
+      });
+    } else {
+      Object.keys(ButtonsEng).forEach((key) => {
+        if (event.code === key) {
+          if (event.code === 'Backspace') {
+            textarea.focus();
+            backspaceFunc();
+          }
+          if (event.code === 'Delete') {
+            textarea.focus();
+            deleteFunc();
+          }
+          if (event.code === 'Enter') {
+            textarea.focus();
+            enterFunc();
+          }
+          if (event.code === 'Tab') {
+            textarea.focus();
+            tabFunc();
+          }
+          if (event.code === 'Space') {
+            textarea.focus();
+            spaceFunc();
+          }
+          if (event.code === 'CapsLock') {
+            capsСhange();
+          }
+          if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
+            textarea.value += ButtonsEng[`${key}`.toLocaleUpperCase];
+          }
         }
-        if (event.code === 'Enter') {
-          textarea.focus();
-          enterFunc();
-        }
-        if (event.code === 'Tab') {
-          textarea.focus();
-          tabFunc();
-        }
-        if (event.code === 'Space') {
-          textarea.focus();
-          spaceFunc();
-        }
-        if (event.code === 'CapsLock') {
-          capsСhange();
-        }
-        if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
-          textarea.value += ButtonsEng[`${key}`];
-        }
-      }
-    });
+      });
+    }
   }
 });
 
@@ -485,6 +551,9 @@ document.addEventListener('keydown', (event) => {
   document.querySelector(`.${event.code}`).classList.add('active');
 });
 
+document.addEventListener('keydown', (event) => {
+  console.log(document.querySelector(`.${event.code}`));
+});
 document.addEventListener('keyup', (event) => {
   document.querySelector(`.${event.code}`).classList.remove('active');
 });
