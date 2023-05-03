@@ -497,7 +497,7 @@ document.addEventListener('keydown', (event) => {
             capsСhange();
           }
           if (!(event.shiftKey || event.altKey || event.ctrlKey || event.metaKey || event.code === 'CapsLock' || event.code === 'Backspace' || event.code === 'Enter' || event.code === 'Tab' || event.code === 'Delete' || event.code === 'Space')) {
-            textarea.value += ButtonsEng[`${key}`.toLocaleUpperCase];
+            textarea.value += ButtonsEng[`${key}`].toUpperCase();
           }
         }
       });
@@ -550,7 +550,6 @@ buttons.forEach((b) => b.addEventListener('mouseup', (event) => {
 document.addEventListener('keydown', (event) => {
   document.querySelector(`.${event.code}`).classList.add('active');
 });
-
 
 document.addEventListener('keyup', (event) => {
   document.querySelector(`.${event.code}`).classList.remove('active');
